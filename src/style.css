@@ -1,0 +1,46 @@
+*,
+*::after,
+*::before {
+   box-sizing: border-box;
+   margin: 0;
+   padding: 0;
+   list-style: none;
+   border: none;
+   outline: none;
+   background: none;
+   text-decoration: none;
+   font-family: "SF UI Text", sans-serif;
+   font-weight: 400;
+   color: rgba(0, 0, 0, 1);
+}
+body {
+   width: 100vw;
+   overflow-x: hidden;
+   padding: 1.6vw 11.3vw;
+   background: #fff;
+}
+@font-face {
+   font-family: "SF Pro Display";
+   src: url("/public/fonts/SF-Pro-Display-Regular.woff");
+   font-weight: 400;
+}
+@font-face {
+   font-family: "SF Pro Display";
+   src: url("/public/fonts/SF-Pro-Display-Medium.woff");
+   font-weight: 500;
+}
+@font-face {
+   font-family: "SF Pro Display";
+   src: url("/public/fonts/SF-Pro-Display-Semibold.woff");
+   font-weight: 600;
+}
+@font-face {
+   font-family: "SF UI Text";
+   src: url("/public/fonts/SFUIText-Regular.woff");
+   font-weight: 400;
+}
+@font-face {
+   font-family: "SF UI Text";
+   src: url("/public/fonts/SFUIText-Medium.woff");
+   font-weight: 500;
+}
