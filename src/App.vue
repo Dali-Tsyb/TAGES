@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { watch, ref } from "vue";
+import { watch } from "vue";
 
 import useItemsStore from "./store/items";
 import useCartStore from "./store/cart";
