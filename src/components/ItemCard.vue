@@ -27,7 +27,11 @@ defineEmits(["toggleCart", "toggleFavorite"]);
       <div class="item-card__buttons">
          <button class="item-card__cart-button" @click="$emit('toggleCart')">
             <img
-               :src="isAddedToCart ? '/icons/check.svg' : '/icons/cart.svg'"
+               :src="
+                  isAddedToCart
+                     ? '/TAGES/icons/check.svg'
+                     : '/TAGES/icons/cart.svg'
+               "
                alt="корзина"
                class="item-card__button-image"
             />
@@ -38,7 +42,9 @@ defineEmits(["toggleCart", "toggleFavorite"]);
          >
             <img
                :src="
-                  isAddedToFavorites ? '/icons/fav_added.svg' : '/icons/fav.svg'
+                  isAddedToFavorites
+                     ? '/TAGES/icons/fav_added.svg'
+                     : '/TAGES/icons/fav.svg'
                "
                alt="избранное"
                class="item-card__button-image"
