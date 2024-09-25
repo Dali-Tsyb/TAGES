@@ -27,10 +27,6 @@ document.addEventListener("click", (event) => {
 function selectOption(option: string) {
    emit("update:selectedOption", option);
 }
-
-defineOptions({
-   name: "Dropdown",
-});
 </script>
 
 <template>
@@ -97,5 +93,46 @@ defineOptions({
 }
 .dropdown__item:hover {
    background: rgb(225, 225, 225);
+}
+
+@media (width < 1280px) {
+   .dropdown__text,
+   .dropdown__item {
+      font-size: 0.99vw;
+   }
+   .dropdown__arrow {
+      width: 1vw;
+      height: 1vw;
+   }
+}
+@media (width <768px) {
+   .dropdown__button,
+   .dropdown__item {
+      width: 18vw;
+      padding: 0.8vw 1.3vw 0.8vw 1vw;
+   }
+   .dropdown__text,
+   .dropdown__item {
+      font-size: 1.2vw;
+   }
+   .dropdown__arrow {
+      width: 1.1vw;
+      height: 1.1vw;
+   }
+}
+@media(width < 480px) {
+   .dropdown__button,
+   .dropdown__item {
+      width: 42vw;
+      padding: 2vw 3vw 2vw 2.2vw;
+   }
+   .dropdown__text,
+   .dropdown__item {
+      font-size: 3.1vw;
+   }
+   .dropdown__arrow {
+      width: 2.3vw;
+      height: 2.3vw;
+   }
 }
 </style>

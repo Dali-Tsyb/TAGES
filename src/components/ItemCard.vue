@@ -52,7 +52,7 @@ defineEmits(["toggleCart", "toggleFavorite"]);
 <style scoped>
 .item-card {
    position: relative;
-   width: 17.6vw;
+   width: 100%;
    border: 1px solid rgba(238, 238, 238, 1);
    display: flex;
    flex-direction: column;
@@ -103,6 +103,7 @@ defineEmits(["toggleCart", "toggleFavorite"]);
 }
 .item-card__button-image {
    width: 1.05vw;
+   height: 1.05vw;
    cursor: pointer;
    transition: scale 0.2s;
 }
@@ -122,5 +123,80 @@ defineEmits(["toggleCart", "toggleFavorite"]);
    color: rgba(255, 255, 255, 1);
    background: rgba(235, 87, 87, 1);
    padding: 0.2vw 0.8vw;
+}
+
+@media (width < 1280px) {
+   .item-card {
+      padding: 1.3vw;
+   }
+   .item-card__code {
+      font-size: 0.6vw;
+   }
+   .item-card__name,
+   .item-card__old-price,
+   .item-card__current-price,
+   .item-card__sale {
+      font-size: 0.9vw;
+   }
+   .item-card__button-image {
+      width: 1.1vw;
+      height: 1.1vw;
+   }
+   .item-card__buttons {
+      bottom: 1.3vw;
+      right: 1.3vw;
+   }
+}
+@media (width < 768px) {
+   .item-card {
+      padding: 1.8vw;
+   }
+   .item-card__code {
+      font-size: 0.8vw;
+   }
+   .item-card__name,
+   .item-card__old-price,
+   .item-card__current-price,
+   .item-card__sale {
+      font-size: 1.2vw;
+   }
+   .item-card__button-image {
+      width: 1.4vw;
+      height: 1.4vw;
+   }
+   .item-card__buttons {
+      bottom: 1.8vw;
+      right: 1.8vw;
+   }
+   .item-card__sale {
+      padding: 0.4vw 1vw;
+   }
+}
+@media (width < 480px) {
+   .item-card {
+      padding: 7vw 5vw;
+   }
+   .item-card__code {
+      font-size: 2.2vw;
+   }
+   .item-card__name,
+   .item-card__old-price,
+   .item-card__current-price,
+   .item-card__sale {
+      font-size: 4vw;
+      margin-top: 2.5vw;
+   }
+   .item-card__button-image {
+      width: 4.2vw;
+      height: 4.2vw;
+   }
+   .item-card__buttons {
+      bottom: 7vw;
+      right: 5vw;
+      gap: 5vw;
+   }
+   .item-card__sale {
+      padding: 0.6vw 1.8vw;
+   }
 }
 </style>

@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { watch } from "vue";
+import { watch, ref } from "vue";
 
 import useItemsStore from "./store/items";
 import useCartStore from "./store/cart";
@@ -9,11 +9,10 @@ import Dropdown from "./components/Dropdown.vue";
 
 const itemsStore = useItemsStore();
 itemsStore.loadData();
-
 const cartStore = useCartStore();
 const favoritesStore = useFavoritesStore();
 
-//фильтры
+//ФИЛЬТРЫ
 const filtersMaterialOptions = itemsStore.materials.map(
    (material) => material.name
 );
@@ -26,7 +25,7 @@ const isAddedToCart = (id: string) =>
    cartStore.items.some((item: any) => item.id === id);
 //запись данных корзины в локальное хранилище
 watch(
-   () => cartStore.items,
+   cartStore.items,
    (value) => {
       localStorage.setItem("cart", JSON.stringify(value));
    }
@@ -35,7 +34,7 @@ watch(
 const isAddedToFavorites = (id: string) =>
    favoritesStore.items.some((item: any) => item.id === id);
 watch(
-   () => favoritesStore.items,
+   favoritesStore.items,
    (value) => {
       localStorage.setItem("favorites", JSON.stringify(value));
    }
@@ -131,9 +130,60 @@ watch(
 
 /* ITEMS */
 .items {
-   margin: 2vw 0 5vw 0;
+   margin-top: 2vw;
    display: grid;
    grid-template-columns: repeat(4, 1fr);
    gap: 2vw;
+   width: 100%;
+}
+
+@media (width < 1280px) {
+   .path__link,
+   .path__slash {
+      font-size: 1vw;
+   }
+   .filters__title {
+      font-size: 0.8vw;
+   }
+}
+@media (width < 768px) {
+   .path__link,
+   .path__slash {
+      font-size: 1.1vw;
+   }
+   .filters__title {
+      font-size: 1vw;
+   }
+   .items {
+      margin-top: 3vw;
+      grid-template-columns: repeat(3, 1fr);
+   }
+}
+@media (width < 480px) {
+   .path__link,
+   .path__slash {
+      font-size: 2.2vw;
+   }
+   .header {
+      font-size: 6vw;
+      margin: 7vw 0;
+   }
+   .filters {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 3vw;
+   }
+   .filters__item:first-child {
+      z-index: 200;
+   }
+   .filters__title {
+      font-size: 2.6vw;
+   }
+   .items {
+      margin-top: 9vw;
+      grid-template-columns: repeat(1, 1fr);
+      gap: 7vw;
+      padding: 0 6vw;
+   }
 }
 </style>
